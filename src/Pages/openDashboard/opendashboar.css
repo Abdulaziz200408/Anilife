@@ -1,0 +1,67 @@
+.ant-drawer-mask {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.ant-drawer-content-wrapper {
+  border-radius: 15px !important;
+}
+
+.bg_img {
+  background-image: url("https://img.freepik.com/free-photo/japan-background-digital-art_23-2151546131.jpg?t=st=1723255023~exp=1723258623~hmac=692559a2e36fb61ff29e2749606c13accef98943c073ea49ea404743fc1a1118&w=1060");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  height: 300px;
+}
+
+.bg_img2 {
+  background-image: url("https://img.freepik.com/free-photo/japan-background-digital-art_23-2151546185.jpg?t=st=1723256161~exp=1723259761~hmac=1953a3ca6c71ad6c9c3a3c8558be3db4296bd3d5b1d9ca1f9e1554c2c9fe9a79&w=1060");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  height: 300px;
+}
+
+.bg_img3 {
+  background-image: url("https://img.freepik.com/free-photo/digital-art-beautiful-mountains_23-2151123644.jpg?t=st=1723256230~exp=1723259830~hmac=dbf4956b5c03eec1caa19bf7265ffc52a4368fff133f76ddaec917cc4a9af1bb&w=1380");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  height: 300px;
+}
+
+.bg_img4 {
+  background-image: url("https://img.freepik.com/free-photo/magenta-nature-fantasy-landscape_23-2150693733.jpg?t=st=1723256242~exp=1723259842~hmac=63d1afc223f48b7a78b71468ea2dc9894c5ddb8e45736d7f36f496aad536cc2f&w=1380");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  height: 300px;
+}
+
+.teblaContainer {
+  width: 100%;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  border-radius: 15px;
+  height: 300px;
+  margin-top: 10px;
+}
+
+.table_row {
+  height: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.table_row:hover {
+  transform: translateY(-5px);
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: radius 50px;
+}

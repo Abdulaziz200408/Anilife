@@ -1,0 +1,74 @@
+.container {
+  width: 90%;
+  max-width: 1200px;
+}
+
+.slider-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* Scroll uchun */
+  padding: 1rem 0;
+  scroll-behavior: smooth; /* Asta-sekin scroll qilish */
+  position: relative;
+}
+
+.cardfg {
+  min-width: 250px !important;
+  flex: 0 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-color: #000000; /* Default holatda qora rang */
+  cursor: pointer;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4); /* Kuchliroq soyalar */
+  border-radius: 10px; /* Yumaloq burchaklar */
+  transition: background-color 0.5s ease, transform 0.5s ease; /* Background va transform uchun asta-sekinlik */
+}
+
+.cardfg:hover {
+  background-color: #ffffff; /* Hover bo'lganda oq rang */
+  transform: scale(1.05); /* Hoverda kartochkani biroz kattalashtirish */
+}
+
+.cardfg h2 {
+  color: #fb155a; /* Default matn rangi #fb155a */
+  font-weight: bold;
+  transition: color 0.5s ease; /* Matn rangiga ham asta-sekinlik qo‘shish */
+}
+
+.cardfg:hover h2 {
+  color: #fb155a; /* Hoverda matn rangi o'zgarmaydi */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.slider-container {
+  -ms-overflow-style: none; /* IE va Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Kartochkadagi matnni markazda joylashtirish */
+.nest {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Goblin One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Media Queries - Kichik ekranlar uchun */
+@media screen and (max-width: 400px) {
+  .cardfg {
+    min-width: 300px;
+    max-width: 380px;
+  }
+}

@@ -1,0 +1,20 @@
+.userAbout{
+    width: 300px;
+    height: 280px;
+    background-color:rgb(255, 255, 255);
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg_about{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+width: 100%;
+text-align: start;
+padding: 10px;
+height: 60px;
+background-color:white;
+border-radius: 5px;
+}

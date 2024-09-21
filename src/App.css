@@ -1,0 +1,9 @@
+.container {
+  max-width: 1400px !important;
+  margin: auto 0;
+}
+
+
+.borderTitle{
+  font-family: "Crimson Text", serif;  font-size: 20px;
+}

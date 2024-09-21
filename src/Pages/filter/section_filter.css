@@ -1,0 +1,113 @@
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.filter-button {
+  background-color: #00CFFF; /* Light blue color */
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: #000; /* Black text */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.filter-button:hover {
+  background-color: #00B3E0; /* Darker blue on hover */
+}
+
+.modal_leftHeader{
+  width: 100px;
+  height: 83vh;
+  background-color: #f39a3a;
+  -webkit-box-shadow: 0px 4px 19px -7px rgba(34, 60, 80, 0.28);
+-moz-box-shadow: 0px 4px 19px -7px rgba(34, 60, 80, 0.28);
+box-shadow: 0px 4px 19px -7px rgba(34, 60, 80, 0.28);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+}
+.icon_hover{
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.icon_hover:hover{
+  background-color: rgb(240, 75, 111) !important;
+  transition: 0.2s ease-in-out;
+}
+
+
+.content{
+  background-color: rgb(255, 255, 255);
+  -webkit-box-shadow: 0px 4px 19px -7px rgba(34, 60, 80, 0.28);
+  -moz-box-shadow: 0px 4px 19px -7px rgba(34, 60, 80, 0.28);
+  box-shadow: 0px 4px 19px -7px rgba(34, 60, 80, 0.28);
+}
+
+
+@media (max-width: 640px) {
+  .modal_leftHeader {
+    display: none;
+  }
+}
+
+
+.premium-glossy-button {
+  background: linear-gradient(135deg, #00b3e0, #33ccff);
+  background-size: 200% 200%;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-glossy-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.premium-glossy-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(-45deg);
+  filter: blur(8px);
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.premium-glossy-button:hover::before {
+  opacity: 1;
+  animation: shine 3s ease-in-out 1; /* Animatsiya faqat bir marta ishga tushadi */
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  50% {
+    left: 125%;
+  }
+  100% {
+    left: -75%;
+    opacity: 0; /* Animatsiya tugagach, oq chiziq yo'qoladi */
+  }
+}
+
+.premium-glossy-button:focus {
+  outline: none;
+}

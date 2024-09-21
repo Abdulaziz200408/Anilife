@@ -1,0 +1,172 @@
+/* Navbar */
+nav {
+  position: relative;
+  z-index: 20;
+}
+
+.respons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seachContainer {
+  position: absolute;
+  width: 260px !important;
+  top: 73px;
+  right: 44px;
+  background-color: #0000009b !important;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+.search-input {
+  width: 220px;
+  padding: 8px 20px;
+  border-radius: 18px;
+  background-color: #fff;
+  color: #000;
+  box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.2),
+    0px 8px 15px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.search-input:focus {
+  box-shadow: inset 0px 6px 8px rgba(0, 0, 0, 0.3),
+    0px 10px 20px rgba(0, 0, 0, 0.4);
+  transform: scale(1.02);
+}
+.custom-modal {
+  width: 320px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.custom-modal .ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.custom-modal .ant-modal-close-x {
+  color: #00f0ff;
+}
+
+.custom-modal .ant-modal-header {
+  background: transparent;
+  border-bottom: none;
+}
+
+.custom-modal .ant-modal-body {
+  padding: 0;
+}
+
+.profile-img-container {
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+
+.profile-img-container img {
+  filter: blur(2px);
+  transition: filter 0.3s ease;
+}
+
+.profile-img-container img:hover {
+  filter: blur(0);
+}
+
+.profile-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.inputs input {
+  margin-bottom: 10px;
+}
+
+.profileDetails {
+  margin-top: 20px;
+}
+
+/* Responsive Menu */
+@media screen and (max-width: 1000px) {
+  .respons {
+    padding: 0px;
+  }
+}
+
+/* Dropdown Menu */
+.greysil {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.614
+  ); /* Semi-transparent background color */
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50; /* Updated z-index for proper stacking */
+  backdrop-filter: blur(3px); /* Apply blur to the background */
+  /* You might also want to set a background color to blend with the blur effect */
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust the rgba value as needed */
+}
+
+.greysil::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.614); /* Semi-transparent background */
+  filter: blur(3px); /* Apply blur effect */
+  z-index: -1; /* Ensure the blur effect is behind the content */
+}
+
+.greysil-content {
+  position: relative;
+  z-index: 1; /* Ensure content is above the blurred background */
+}
+
+.best h3 {
+  cursor: pointer;
+  color: #eae5e5;
+}
+.best h3:hover {
+  color: #f15080;
+  transition: 0.3s linear;
+}
+
+.naveh {
+  background-color: #00000051;
+  width: 100% !important;
+}
+
+@media screen and (max-width: 567px) {
+  .logo {
+    width: 100px !important;
+  }
+
+  .naveh {
+    background-color: #00000000;
+    width: 100% !important;
+  }
+}

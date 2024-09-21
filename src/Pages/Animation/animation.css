@@ -1,0 +1,397 @@
+.subttile {
+    color: #fff;
+    display: -webkit-box;
+    font-size: 17px;
+    height: 80px;
+    line-height: 25px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subtitle::after {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: white; /* Adjust if necessary to match the background */
+    padding-left: 1ch; /* Space to make sure the ellipsis is not clipped */
+}
+
+
+.titfd{
+    font-size: 35px;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: #33ccff; 
+    width: 100%; 
+    margin-top: 4px; 
+    margin-bottom: 5px; 
+}
+.button{
+    width: 110px;
+    height: 30px;
+    margin-top: 20px;
+    color: rgb(167, 167, 167) !important;
+    border-radius: 10px;
+    background-color: aqua;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.media{
+    margin-top: 300px;
+}
+
+.widdf{
+    width:50%;
+    padding-left: 60px;
+}
+
+.premium-button {
+    background: linear-gradient(135deg, #fb155a, hsl(338, 95%, 55%)); /* Gradient fon */
+    border: none;
+    border-radius: 6px;
+    padding: 6px 18px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .title_button{
+    background: linear-gradient(135deg, #fb155a, hsl(338, 95%, 55%)); /* Gradient fon */
+    border: none;
+    border-radius: 6px;
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Gradient from black to transparent */
+.gradient-shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 33%; /* Adjust height as needed */
+    background: linear-gradient(to top, rgb(14, 18, 21), transparent);
+  }
+  
+
+  
+  .title_button1{
+    background:rgba(0, 0, 0, 0.482); /* Gradient fon */
+    border: none;
+    border-radius: 6px;
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .premium-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: skewX(-45deg);
+    filter: blur(8px);
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+  }
+  
+  .premium-button:hover::before {
+    opacity: 1; /* Yaltiroq effekt faqat hoverda */
+    animation: shine 3s ease-in-out 1; /* Animatsiya faqat bir marta ishlaydi */
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -75%;
+    }
+    50% {
+      left: 125%;
+    }
+    100% {
+      left: -75%;
+      opacity: 0;
+    }
+  }
+  
+  .premium-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Hover effekti */
+  }
+  
+  .premium-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 179, 224, 0.5); /* Fokus effekti */
+  }
+  
+
+
+  @media screen and (max-width: 985px){
+    .media{
+        margin-top: 190px!important;
+    }
+
+}
+
+ 
+
+@media screen and (max-width: 823px){
+    .titfd{
+        display: inline-block;
+        font-size: 28px;
+        max-width: 25ch; /* Limit to 15 characters */
+        height: 25px; /* Set to one line's height */
+        line-height: 25px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        
+    }
+    .title_button1{
+        background:rgba(0, 0, 0, 0.482); /* Gradient fon */
+        border: none;
+        border-radius: 6px;
+        width: 70px;
+        height: 27px;
+        font-size: 13px;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .title_button{
+        border: none;
+        border-radius: 6px;
+        width: 70px;
+        height: 27px;
+        font-size: 13px;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+    .widdf{
+        width:70%;
+    }
+    .subttile{
+        font-size: 16px;
+        line-height: 22px;
+        height: 71px;
+    }
+    .media{
+        margin-top: 220px!important;
+    }
+}
+
+@media screen and (max-width: 774px)  {
+
+    .widdf{
+        width:60%;
+        padding-left: 22px !important;
+        margin-top: 80px;
+    }
+    .media{
+        margin-top: 100px !important;
+    }
+    
+    .titfd{
+        display: inline-block;
+        font-size: 20px;
+        max-width: 25ch; /* Limit to 15 characters */
+        height: 25px; /* Set to one line's height */
+        line-height: 25px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        
+    }
+
+    hr {
+        border: 0;
+        height: 2px; /* Qalinlikni o'zgartiring */
+        background-color: #ffffff; /* Qora rang */
+        width: 100%; /* Kenglikni 100% ga o'rnating */
+        margin-top: 5px; /* O'rtacha bo'lga qo'shish */
+        margin-bottom: 5px; /* O'rtacha bo'lga qo'shish */
+    }
+.subttile{
+    font-size: 14px;
+    line-height: 24px;
+    height: 70px !important;
+}
+
+.title_button1{
+    background:rgba(0, 0, 0, 0.482); /* Gradient fon */
+    border: none;
+    border-radius: 6px;
+    width: 70px;
+    height: 27px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  .title_button{
+    border: none;
+    border-radius: 6px;
+    width: 70px;
+    height: 27px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+
+}
+
+
+
+@media screen and (max-width: 567px)  {
+    .media{
+        margin-top: 120px !important;
+    }
+    
+    .titfd{
+        font-size: 23px !important;
+    }
+.subttile{
+    font-size: 14px;
+    line-height: 22.5px;
+    height: 50px !important;
+
+}
+
+.widdf{
+    width:90%;
+}
+.title_button1{
+    background:rgba(0, 0, 0, 0.482); /* Gradient fon */
+    border: none;
+    border-radius: 6px;
+    width: 70px;
+    height: 27px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  .title_button{
+    border: none;
+    border-radius: 6px;
+    width: 70px;
+    height: 27px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+
+@media screen and (max-width: 350px)  {
+    .media{
+        margin-top: 100px !important;
+    }
+.widdf{
+    width:100%;
+}
+
+.title_button1{
+    background:rgba(0, 0, 0, 0.482); /* Gradient fon */
+    border: none;
+    border-radius: 6px;
+    width: 70px;
+    height: 27px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  .title_button{
+    border: none;
+    border-radius: 6px;
+    width: 70px;
+    height: 27px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+
+
+
+.titfd{
+    font-size: 20px !important;
+}
+.subttile{
+font-size: 12px;
+line-height: 22px;
+}
+}
