@@ -14,10 +14,17 @@ interface Message {
   profileImg?: string;
 }
 
+interface AnimeData {
+  id: number;
+  iframe: string;
+}
+
 const Filter: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const [openChatDrawer, setOpenChatDrawer] = useState(false); // State for the Chat drawer
+  const [openSignModal, setOpenSignModal] = useState(false); // State for the Anime Edit modal
   const [message, setMessage] = useState<string>("");
   const [datamessage, setdatamessage] = useState<Message[]>([]);
+  const [animeData, setAnimeData] = useState<AnimeData[]>([]); // State for Anime data
   const [isRegistered, setIsRegistered] = useState<boolean>(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -37,77 +44,49 @@ const Filter: React.FC = () => {
     }
   }, []);
 
-  // Har 2 soniyada yangilab turish
-  // useEffect(() => {
-  //   const fetchMessages = () => {
-  //     axios
-  //       .get("https://c0adcbfd27d5ecc2.mokky.dev/ews")
-  //       .then((response) => {
-  //         setdatamessage(response.data);
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error fetching messages:", error);
-  //       });
-  //   };
-
-  //   fetchMessages();
-  //   const interval = setInterval(fetchMessages, 2000); // Poll every 2 seconds
-
-  //   return () => clearInterval(interval); // Cleanup interval on component unmount
-  // }, []);
-
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [datamessage]);
 
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setMessage(e.target.value);
-  // };
+  const openAnimeEditModal = () => {
+    setOpenSignModal(true);
+    fetchAnimeData(); // Fetch anime data when the modal opens
+  };
 
-  // const handleSendMessage = () => {
-  //   if (message.trim() && loggedInUser) {
-  //     const newMessage: Omit<Message, "id"> = {
-  //       text: message,
-  //       sender: loggedInUser,
-  //       timestamp: new Date().toLocaleTimeString(),
-  //       profileImg: profilImg,
-  //     };
+  const closeAnimeEditModal = () => {
+    setOpenSignModal(false);
+  };
 
-  //     axios
-  //       .post("https://c0adcbfd27d5ecc2.mokky.dev/ews", newMessage)
-  //       .then((response) => {
-  //         setdatamessage([
-  //           ...datamessage,
-  //           { ...newMessage, id: response.data.id },
-  //         ]);
-  //         setMessage("");
-  //       })
-  //       .catch((error) => {
-  //         console.error("Xabar yuborishda xatolik:", error);
-  //       });
-  //   }
-  // };
-
-  // const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-  //   if (e.key === "Enter") {
-  //     e.preventDefault();
-  //     handleSendMessage();
-  //   }
-  // };
+  // Fetch anime data from the API
+  const fetchAnimeData = async () => {
+    try {
+      const response = await axios.get(
+        "https://6d548820c3f18dbd.mokky.dev/Shorts"
+      );
+      setAnimeData(response.data);
+    } catch (error) {
+      console.error("Error fetching anime data:", error);
+    }
+  };
 
   return (
     <div className="container mx-auto mt-10 p-0">
-      <div className=" flex  justify-between flex-wrap gap-2">
-        <div className=" flex flex-wrap gap-2">
+      <div className="flex justify-between flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2">
           <button className="premium-glossy-button">Barcha anemelar</button>
-          <button className="premium-glossy-button">Anime Edit</button>
+          <button
+            className="premium-glossy-button"
+            onClick={openAnimeEditModal}
+          >
+            Anime Edit
+          </button>
         </div>
         <div className="button-group">
           <div>
             <button
-              onClick={() => setOpen(true)}
+              onClick={() => setOpenChatDrawer(true)}
               className="premium-glossy-button"
             >
               Chat
@@ -115,16 +94,18 @@ const Filter: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Chat Drawer */}
       <Drawer
         placement="left"
         width={950}
-        open={open}
-        onClose={() => setOpen(false)}
+        open={openChatDrawer}
+        onClose={() => setOpenChatDrawer(false)}
         className="responsive-drawer"
       >
         {isRegistered ? (
           <div className="modalHeader flex gap-5">
-            <div className="modal_leftHeader  hidden sm:block">
+            <div className="modal_leftHeader hidden sm:block">
               <button className="mt-4">
                 <img
                   className="rounded-full"
@@ -217,6 +198,44 @@ const Filter: React.FC = () => {
             <img src={kirish} alt="Registration" />
           </div>
         )}
+      </Drawer>
+
+      {/* Anime Edit Modal */}
+      <Drawer
+        closable
+        destroyOnClose
+        title={<p>Anime Edit Modal</p>}
+        placement="left"
+        open={openSignModal}
+        onClose={closeAnimeEditModal}
+        width={500}
+      >
+        <div>
+          {animeData.map((anime) => (
+            <div key={anime.id} className="mb-4">
+              {anime.iframe && (
+                <iframe
+                  style={{
+                    border: "1px solid #ccc",
+                    borderRadius: "4px",
+                    overflow: "hidden",
+                    objectFit: "contain",
+                    marginBottom: "10px",
+                    marginLeft: "10px",
+                    marginTop: "10px",
+                    boxShadow: "0 0 10px rgba(0,0,0,0.2)",
+                  }}
+                  width="360px"
+                  height="550px"
+                  src={anime.iframe}
+                  title={`Anime ${anime.id}`}
+                  frameBorder="0"
+                  allowFullScreen
+                ></iframe>
+              )}
+            </div>
+          ))}
+        </div>
       </Drawer>
     </div>
   );

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "tailwindcss/tailwind.css";
 import Navbar from "../Menu/Layout";
-import './animation.css';
+import "./animation.css";
 import { Spin } from "antd";
 
 interface Slide {
@@ -14,7 +14,7 @@ interface Slide {
 
 const contentStyle: React.CSSProperties = {
   padding: 50,
-  background: 'rgba(0, 0, 0, 0.05)',
+  background: "rgba(0, 0, 0, 0.05)",
   borderRadius: 4,
 };
 
@@ -47,13 +47,15 @@ const Animation: React.FC = () => {
   }, [slides]);
 
   if (slides.length === 0) {
-    return <div className="text-center text-white">
-      <Spin tip="Loading">{content}</Spin>
-    </div>;
+    return (
+      <div className="text-center text-white">
+        <Spin tip="Loading">{content}</Spin>
+      </div>
+    );
   }
 
   return (
-    <div className="relative w-full h-[40vh] md:h-[60vh] lg:h-[77vh] overflow-hidden">
+    <div className="relative w-full h-[40vh] md:h-[60vh] lg:h-[83vh] overflow-hidden">
       <div className="absolute top-0 left-0 w-full z-10">
         <Navbar />
       </div>
@@ -80,31 +82,21 @@ const Animation: React.FC = () => {
             style={{ zIndex: "-1" }}
           ></div>
 
-             {/* Box shadow at the bottom of the slide */}
-             <div className="gradient-shadow"></div>
+          {/* Box shadow at the bottom of the slide */}
+          <div className="gradient-shadow"></div>
 
-<div className=" media">
+          <div className=" media">
             <div className=" widdf">
-          <div className=" flex gap-2">
-          <button className="mt-4 title_button">
-  Anime
-</button>
+              <div className=" flex gap-2">
+                <button className="mt-4 title_button">Anime</button>
 
-<button className="mt-4 title_button1">
-  {slide.date}
-</button>
-<button className="mt-4 title_button1">
-  10-12
-</button>
-          </div>
+                <button className="mt-4 title_button1">{slide.date}</button>
+                <button className="mt-4 title_button1">10-12</button>
+              </div>
               <h3 className="titfd">{slide.name}</h3>
               <hr />
               <p className="mt-2 subttile ">{slide.desc}</p>
-
-
             </div>
-
-            
           </div>
         </div>
       ))}
